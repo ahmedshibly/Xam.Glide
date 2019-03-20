@@ -1,0 +1,111 @@
+﻿<metadata>
+  <attr path="/api/package[@name='com.bumptech.glide']/interface[@name='ModelTypes']"
+          name="visibility">public</attr>
+  <attr path="/api/package[@name='com.bumptech.glide.module']/interface[@name='AppliesOptions']"
+          name="visibility">public</attr>
+  <attr path="/api/package[@name='com.bumptech.glide.module']/interface[@name='RegistersComponents']"
+          name="visibility">public</attr>
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine']/interface[@name='EngineJobListener']"
+          name="visibility">public</attr>
+  <attr path="/api/package[@name='com.bumptech.glide.load.data.mediastore']/interface[@name='ThumbnailQuery']"
+         name="visibility">public</attr>
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine.bitmap_recycle']/interface[@name='LruPoolStrategy']"
+         name="visibility">public</attr>
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine.bitmap_recycle']/interface[@name='ArrayAdapterInterface']"
+        name="visibility">public</attr>
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine.bitmap_recycle']/interface[@name='Poolable']"
+        name="visibility">public</attr>
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine.bitmap_recycle']/class[@name='BaseKeyPool']"
+        name="visibility">public</attr>
+
+  <!--Interface we don't need-->
+  <remove-node path="//implements[@name='com.bumptech.glide.ModelTypes']" />
+
+
+  <!--Workaround ViewTarget-->
+
+  <attr path="//class[contains(@name, 'Target')]/method[@name='getDrawable']/parameter[1]" name="managedType">Java.Lang.Object</attr>
+
+  <attr path="//class[contains(@name, 'Target')]/method[@name='setResource']/parameter[1]" name="managedType">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.request.target']/class[@name='ViewTarget']/method[@name='getView' and count(parameter)=0]" name="return">android.view.View</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.request.target']/class[@name='ViewTarget']/field[@name='view']" name="managedName">_view</attr>
+
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine.executor']/class[@name='GlideExecutor']/method[@name='invokeAll']/parameter[@name='tasks']"
+               name="type">System.Collections.ICollection</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine.executor']/class[@name='GlideExecutor']/method[@name='invokeAll']"
+               name="managedReturn">System.Collections.IList</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine.executor']/class[@name='GlideExecutor']/method[@name='invokeAny']/parameter[@name='tasks']"
+              name="type">System.Collections.ICollection</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.engine.executor']/class[@name='GlideExecutor']/method[@name='invokeAny']"
+               name="managedReturn">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='FileDescriptorAssetPathFetcher']/method[@name='loadResource']"
+            name="managedReturn">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='FileDescriptorLocalUriFetcher']/method[@name='loadResource']"
+              name="managedReturn">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='AssetFileDescriptorLocalUriFetcher']/method[@name='loadResource']"
+        name="managedReturn">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='StreamAssetPathFetcher']/method[@name='loadResource']"
+            name="managedReturn">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='StreamLocalUriFetcher']/method[@name='loadResource']"
+               name="managedReturn">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='FileDescriptorLocalUriFetcher']/method[@name='close']/parameter[@name='data']"
+              name="type">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='StreamAssetPathFetcher']/method[@name='close']/parameter[@name='data']"
+              name="type">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='StreamLocalUriFetcher']/method[@name='close']/parameter[@name='data']"
+              name="type">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='FileDescriptorAssetPathFetcher']/method[@name='close']/parameter[@name='data']"
+            name="type">Java.Lang.Object</attr>
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='InputStreamRewinder']/implements[@name='com.bumptech.glide.load.data.DataRewinder']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model']/class[@name='StreamEncoder']/implements[@name='com.bumptech.glide.load.Encoder']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.resource.bitmap']/class[@name='StreamBitmapDecoder']/implements[@name='com.bumptech.glide.load.ResourceDecoder']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.resource.bytes']/class[@name='BytesResource']/implements[@name='com.bumptech.glide.load.engine.Resource']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.engine.bitmap_recycle']/class[@name='IntegerArrayAdapter']/implements[@name='com.bumptech.glide.load.engine.bitmap_recycle.ArrayAdapterInterface']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.engine.bitmap_recycle']/class[@name='ByteArrayAdapter']/implements[@name='com.bumptech.glide.load.engine.bitmap_recycle.ArrayAdapterInterface']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='InputStreamRewinder.Factory']/implements[@name='com.bumptech.glide.load.data.DataRewinder.Factory']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.resource.gif']/class[@name='StreamGifDecoder']/implements[@name='com.bumptech.glide.load.ResourceDecoder']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.engine']/interface[@name='EngineJobListener']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='AssetFileDescriptorLocalUriFetcher']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model']/class[@name='AssetUriLoader']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.resource.bitmap']/class[@name='BitmapDrawableEncoder']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.resource.bitmap']/class[@name='BitmapEncoder']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model']/class[@name='UrlUriLoader']" />
+
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.resource.gif']/class[@name='GifDrawableEncoder']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model']/class[@name='ByteArrayLoader']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model']/class[@name='FileLoader']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model']/class[@name='ResourceLoader']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model.stream']/class[@name='BaseGlideUrlLoader']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model']/class[@name='StringLoader']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.model']/class[@name='UriLoader']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='StreamAssetPathFetcher']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.data']/class[@name='StreamLocalUriFetcher']" />
+  <remove-node path="/api/package[@name='com.bumptech.glide.load.engine.executor']/class[@name='GlideExecutor']" />
+
+
+
+</metadata>
